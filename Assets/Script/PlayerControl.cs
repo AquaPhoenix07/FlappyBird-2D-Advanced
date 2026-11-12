@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class PlayerControl : MonoBehaviour
@@ -5,6 +6,7 @@ public class PlayerControl : MonoBehaviour
     private Rigidbody2D playerRigidbody;
     [SerializeField] private const float JUMP_POWER = 3f;
     [SerializeField] private const float ROTATE_SPEED = 10f;
+    public event Action OnBirdDied; 
 
     private void Awake()
     {
@@ -35,6 +37,10 @@ public class PlayerControl : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         Debug.Log(collision.gameObject.name);
+        Destroy(this.gameObject);
+        OnBirdDied?.Invoke();
     }
+
+    
     
 }

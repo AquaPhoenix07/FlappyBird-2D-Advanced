@@ -10,7 +10,7 @@ public class ObstaclesSpawner : MonoBehaviour
     public GameObject pipePrefab;
     
     //Setting cho Coroutine
-    [SerializeField] private float intervalTime = 2f;
+    private float intervalTime = 4f;
     [SerializeField] private float height = 4.5f;
     
     
