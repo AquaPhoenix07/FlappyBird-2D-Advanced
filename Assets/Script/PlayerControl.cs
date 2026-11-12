@@ -6,7 +6,7 @@ public class PlayerControl : MonoBehaviour
     private Rigidbody2D playerRigidbody;
     [SerializeField] private const float JUMP_POWER = 3f;
     [SerializeField] private const float ROTATE_SPEED = 10f;
-    public event Action OnBirdDied; 
+    public static event Action OnBirdDied; 
 
     private void Awake()
     {
@@ -40,7 +40,4 @@ public class PlayerControl : MonoBehaviour
         Destroy(this.gameObject);
         OnBirdDied?.Invoke();
     }
-
-    
-    
 }

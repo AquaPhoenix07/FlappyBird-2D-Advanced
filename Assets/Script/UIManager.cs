@@ -1,16 +1,30 @@
+using System;
+using TMPro;
 using UnityEngine;
 
 public class UIManager : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public TextMeshProUGUI scoreTextMesh;
+    public TextMeshProUGUI highestScoreTextMesh;
+
+    private void Start()
+    {
+        GameManager.Instance.OnChangeScore += UpdateScore;
+        GameManager.Instance.OnChangeHighScore += UpdateHighScore;
+    }
+    private void Update()
     {
         
     }
 
-    // Update is called once per frame
-    void Update()
+    private void UpdateScore(int score)
     {
-        
+        scoreTextMesh.text = Convert.ToString(score);
     }
+
+    private void UpdateHighScore(int highScore)
+    {
+        highestScoreTextMesh.text = Convert.ToString(highScore);
+    }
+        
 }

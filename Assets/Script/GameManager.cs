@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -5,7 +6,8 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance; 
     private int score;
     private int highestScore;
-    public static event
+    public event Action<int> OnChangeScore;
+    public event Action<int> OnChangeHighScore;
     
     private void Awake()
     {
@@ -18,9 +20,11 @@ public class GameManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        Time.timeScale = 1;
         score = 0;
         highestScore = 0;
         ScoreZone.OnScorePlus += AddScore;
+        PlayerControl.OnBirdDied += GameOver;
     }
 
     // Update is called once per frame
@@ -35,8 +39,14 @@ public class GameManager : MonoBehaviour
         if (highestScore < score)
         {
             highestScore = score;
+            OnChangeHighScore?.Invoke(highestScore);
         }
-        
+        OnChangeScore?.Invoke(score);
+    }
+
+    private void GameOver()
+    {
+        Time.timeScale = 0;
     }
     
 }
