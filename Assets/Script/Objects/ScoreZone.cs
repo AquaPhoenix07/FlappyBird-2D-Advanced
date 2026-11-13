@@ -7,7 +7,7 @@ public class ScoreZone : MonoBehaviour
     
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.TryGetComponent<PlayerControl>(out PlayerControl player))
+        if (collision.TryGetComponent<PlayerControl>(out _))
         {
             OnScorePlus?.Invoke();
         }

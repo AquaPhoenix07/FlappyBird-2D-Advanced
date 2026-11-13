@@ -21,6 +21,9 @@ public class UIManager : MonoBehaviour
         GameManager.Instance.OnChangeHighScore += UpdateHighScore;
         PlayerControl.OnBirdDied += ShowGameOverCanvas;
         GameManager.Instance.OnChangeCoin += UpdateCoin;
+
+        highestScoreTextBoard.text = Convert.ToString(GameManager.Instance.HighestScore);
+        highestScoreTextMesh.text = Convert.ToString(GameManager.Instance.HighestScore);
     }
     private void Update()
     {

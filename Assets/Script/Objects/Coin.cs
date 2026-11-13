@@ -8,7 +8,10 @@ public class Coin : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        OnGetCoin?.Invoke();
-        OnCoinReturn?.Invoke(gameObject);
+        if (collision.TryGetComponent<PlayerControl>(out _))
+        {
+            OnGetCoin?.Invoke();
+            OnCoinReturn?.Invoke(gameObject);
+        }
     }
 }
