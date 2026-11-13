@@ -25,6 +25,8 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1;
         score = 0;
         highestScore = 0;
+        
+        //SetUp Event
         ScoreZone.OnScorePlus += AddScore;
         PlayerControl.OnBirdDied += GameOver;
     }
@@ -38,7 +40,7 @@ public class GameManager : MonoBehaviour
     private void AddScore()
     {
         score++;
-        if (score % 20 == 0 && money != 0)
+        if (score % 5 == 0 && score != 0)
         {
             money++;
             OnChangeMoney?.Invoke(money);

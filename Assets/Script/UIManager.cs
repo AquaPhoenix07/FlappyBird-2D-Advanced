@@ -33,10 +33,10 @@ public class UIManager : MonoBehaviour
         scoreTextBoard.text = Convert.ToString(score);
     }
 
-    private void UpdateHighScore(int highScore)
+    private void UpdateHighScore(int highestScore)
     {
-        highestScoreTextMesh.text = Convert.ToString(highScore);
-        highestScoreTextBoard.text = Convert.ToString(highScore);
+        highestScoreTextMesh.text = Convert.ToString(highestScore);
+        highestScoreTextBoard.text = Convert.ToString(highestScore);
     }
 
     private void UpdateMoney(int money)
