@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class ObstaclesSpawner : MonoBehaviour
 {
@@ -10,9 +12,12 @@ public class ObstaclesSpawner : MonoBehaviour
     public GameObject pipePrefab;
     
     //Setting cho Coroutine
-    private float intervalTime = 3f;
-    private float topHeight = 3.2f;
-    private float bottomHeight = -1.6f;
+    private float intervalTime = 2f;
+    private float topHeight = 5f;
+    private float bottomHeight = 0f;
+    
+    //Event
+    public static event Action<Vector3> PipeSpawn;
     
     
 
@@ -20,12 +25,11 @@ public class ObstaclesSpawner : MonoBehaviour
     {
         obstaclesPool = new Queue<GameObject>();
         
-        
         for (int i = 0; i < poolSize ; i++)
         {
             GameObject pipe = Instantiate(pipePrefab);
-            PipeMovement pipeScript = pipe.GetComponent<PipeMovement>();
-            pipeScript.OnPipeDespawned += OnReturnPipe;
+            MoveLeft pipeScript = pipe.GetComponent<MoveLeft>();
+            pipeScript.ObjectDespawned += OnReturnPipe;
             pipe.SetActive(false);
             obstaclesPool.Enqueue(pipe);
         }
@@ -52,8 +56,8 @@ public class ObstaclesSpawner : MonoBehaviour
         else
         {
             GameObject pipe = Instantiate(pipePrefab);
-            PipeMovement pipeScript = pipe.GetComponent<PipeMovement>();
-            pipeScript.OnPipeDespawned += OnReturnPipe;
+            MoveLeft pipeScript = pipe.GetComponent<MoveLeft>();
+            pipeScript.ObjectDespawned += OnReturnPipe;
             return pipe;
         }
     }
@@ -69,5 +73,6 @@ public class ObstaclesSpawner : MonoBehaviour
         GameObject pipe = GetPipe();
         float randomHeight = Random.Range(bottomHeight, topHeight);
         pipe.transform.position = new Vector3(transform.position.x, randomHeight, 0);
+        PipeSpawn?.Invoke(pipe.transform.position);
     }
 }

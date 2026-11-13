@@ -4,20 +4,25 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance; 
+    
+    // SCORE AND COIN
     private int score;
     private int highestScore;
-    private static int money;
+    private int coin;
+    // EVENTS
     public event Action<int> OnChangeScore;
     public event Action<int> OnChangeHighScore;
-    public event Action<int> OnChangeMoney;
+    public event Action<int> OnChangeCoin;
     
     private void Awake()
     {
         if (Instance != null)
         {
             Destroy(gameObject);
+            return;
         }
         Instance = this;
+        DontDestroyOnLoad(gameObject);
     }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -29,6 +34,7 @@ public class GameManager : MonoBehaviour
         //SetUp Event
         ScoreZone.OnScorePlus += AddScore;
         PlayerControl.OnBirdDied += GameOver;
+        Coin.OnGetCoin += AddCoin;
     }
 
     // Update is called once per frame
@@ -40,11 +46,6 @@ public class GameManager : MonoBehaviour
     private void AddScore()
     {
         score++;
-        if (score % 5 == 0 && score != 0)
-        {
-            money++;
-            OnChangeMoney?.Invoke(money);
-        }
         if (highestScore < score)
         {
             highestScore = score;
@@ -53,9 +54,20 @@ public class GameManager : MonoBehaviour
         OnChangeScore?.Invoke(score);
     }
 
+    private void AddCoin()
+    {
+            coin++;
+            OnChangeCoin?.Invoke(coin);
+    }
     private void GameOver()
     {
         Time.timeScale = 0;
     }
-    
+
+    private void OnDestroy()
+    {
+        ScoreZone.OnScorePlus -= AddScore;
+        PlayerControl.OnBirdDied -= GameOver;
+        Coin.OnGetCoin -= AddCoin;
+    }
 }
