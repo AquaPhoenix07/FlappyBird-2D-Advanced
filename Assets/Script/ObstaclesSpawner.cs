@@ -11,7 +11,8 @@ public class ObstaclesSpawner : MonoBehaviour
     
     //Setting cho Coroutine
     private float intervalTime = 3f;
-    [SerializeField] private float height = 4.5f;
+    private float topHeight = 3.2f;
+    private float bottomHeight = -1.6f;
     
     
 
@@ -66,7 +67,7 @@ public class ObstaclesSpawner : MonoBehaviour
     private void SpawnObstacles()
     {
         GameObject pipe = GetPipe();
-        float randomHeight = Random.Range(-height, height);
+        float randomHeight = Random.Range(bottomHeight, topHeight);
         pipe.transform.position = new Vector3(transform.position.x, randomHeight, 0);
     }
 }

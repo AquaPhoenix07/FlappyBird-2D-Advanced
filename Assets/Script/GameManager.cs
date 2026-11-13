@@ -6,8 +6,10 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance; 
     private int score;
     private int highestScore;
+    private static int money;
     public event Action<int> OnChangeScore;
     public event Action<int> OnChangeHighScore;
+    public event Action<int> OnChangeMoney;
     
     private void Awake()
     {
@@ -36,6 +38,11 @@ public class GameManager : MonoBehaviour
     private void AddScore()
     {
         score++;
+        if (score % 20 == 0 && money != 0)
+        {
+            money++;
+            OnChangeMoney?.Invoke(money);
+        }
         if (highestScore < score)
         {
             highestScore = score;
