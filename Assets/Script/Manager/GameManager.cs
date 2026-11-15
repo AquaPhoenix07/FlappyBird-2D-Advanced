@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -43,6 +44,7 @@ public class GameManager : MonoBehaviour
         ScoreZone.OnScorePlus += AddScore;
         PlayerControl.OnBirdDied += GameOver;
         Coin.OnGetCoin += AddCoin;
+        GameOver_UI.OnClickRestartButton += RestartLevel;
         
         //EVENT BROADCAST
         OnChangeHighScore?.Invoke(highestScore);
@@ -77,6 +79,11 @@ public class GameManager : MonoBehaviour
         PlayerPrefs.Save();
     }
 
+    private void RestartLevel()
+    {
+        Debug.Log("Restart");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
     private void OnDestroy()
     {
         ScoreZone.OnScorePlus -= AddScore;
