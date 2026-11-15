@@ -36,7 +36,6 @@ public class GameManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        Time.timeScale = 1;
         score = 0;
         highestScore = PlayerPrefs.GetInt(HIGHEST_SCORE_KEY, 0); //Key và giá trị mặc định nếu không kiếm thấy
         
