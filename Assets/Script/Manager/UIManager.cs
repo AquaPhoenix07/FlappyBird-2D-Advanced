@@ -10,7 +10,7 @@ public class UIManager : MonoBehaviour
     public TextMeshProUGUI highestScoreTextBoard;
     public TextMeshProUGUI coinText;
     public Canvas gameOverCanvas;
-    public Canvas gameStarterCanvas;
+   
 
     private void Awake()
     {
@@ -23,7 +23,7 @@ public class UIManager : MonoBehaviour
         GameManager.Instance.OnChangeHighScore += UpdateHighScore;
         PlayerControl.OnBirdDied += ShowGameOverCanvas;
         GameManager.Instance.OnChangeCoin += UpdateCoin;
-        GameStarter.OnGameStart += TurnOffGameStarterCanvas;
+        
 
         highestScoreTextBoard.text = Convert.ToString(GameManager.Instance.HighestScore);
         highestScoreTextMesh.text = Convert.ToString(GameManager.Instance.HighestScore);
@@ -54,10 +54,7 @@ public class UIManager : MonoBehaviour
     {
         gameOverCanvas.gameObject.SetActive(true);
     }
-    private void TurnOffGameStarterCanvas()
-    {
-        gameStarterCanvas.gameObject.SetActive(false);
-    }
+    
     private void OnDestroy()
     {
         GameManager.Instance.OnChangeScore -= UpdateScore;
