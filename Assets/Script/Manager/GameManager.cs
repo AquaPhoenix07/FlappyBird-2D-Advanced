@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance; 
     // Khai báo điểm để lưu vào phần cứng
     private const string HIGHEST_SCORE_KEY = "HighestScore";
+    private const string MENU_LEVEL = "Lobby";
     
     // SCORE AND COIN
     private int score;
@@ -40,11 +41,13 @@ public class GameManager : MonoBehaviour
         score = 0;
         highestScore = PlayerPrefs.GetInt(HIGHEST_SCORE_KEY, 0); //Key và giá trị mặc định nếu không kiếm thấy
         
+        
         //SetUp Event
         ScoreZone.OnScorePlus += AddScore;
         PlayerControl.OnBirdDied += GameOver;
         Coin.OnGetCoin += AddCoin;
         GameOver_UI.OnClickRestartButton += RestartLevel;
+        GameOver_UI.OnClickMenuButton += BackToMenu;
         
         //EVENT BROADCAST
         OnChangeHighScore?.Invoke(highestScore);
@@ -84,10 +87,17 @@ public class GameManager : MonoBehaviour
         Debug.Log("Restart");
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
+
+    private void BackToMenu()
+    {
+        SceneManager.LoadScene(MENU_LEVEL);
+    }
     private void OnDestroy()
     {
         ScoreZone.OnScorePlus -= AddScore;
         PlayerControl.OnBirdDied -= GameOver;
         Coin.OnGetCoin -= AddCoin;
+        GameOver_UI.OnClickRestartButton -= RestartLevel;
+        GameOver_UI.OnClickMenuButton -= BackToMenu;
     }
 }

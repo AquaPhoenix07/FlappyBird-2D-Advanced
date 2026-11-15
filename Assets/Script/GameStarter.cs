@@ -8,8 +8,8 @@ public class GameStarter : MonoBehaviour
     //Cờ trạng thái : False = chưa bắt đầu, true = đã bắt đầu
     private bool isStarted;
 
-    private void OnEnabled() => SceneManager.sceneLoaded += OnSceneLoaded;
-    private void OnDisabled() => SceneManager.sceneLoaded -= OnSceneLoaded;
+    private void OnEnable() => SceneManager.sceneLoaded += OnSceneLoaded;
+    private void OnDisable() => SceneManager.sceneLoaded -= OnSceneLoaded;
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {

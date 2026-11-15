@@ -10,4 +10,9 @@ public class GameStarter_UI : MonoBehaviour
     {
         this.gameObject.SetActive(false);
     }
+
+    private void OnDestroy()
+    {
+        GameStarter.OnGameStart -= TurnOffGameStarterCanvas;
+    }
 }
