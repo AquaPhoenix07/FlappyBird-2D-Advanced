@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fb6ed0879c4cd047a1a641984096f1e, type: 3}
   m_Name: RedBird
   m_EditorClassIdentifier: Assembly-CSharp::ItemData
-  itemID: 
+  itemID: RedBird
   itemType: 0
-  itemSprite: {fileID: 0}
-  isUnlockedDafault: 0
+  itemSprite: {fileID: 7637746059382139010, guid: 11e1d38b0b8aa93409fd7803c877088b, type: 3}
+  isUnlockedDafault: 1
