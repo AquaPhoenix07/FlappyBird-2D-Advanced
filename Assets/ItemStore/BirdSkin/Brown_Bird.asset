@@ -10,9 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6fb6ed0879c4cd047a1a641984096f1e, type: 3}
-  m_Name: RedBird
+  m_Name: Brown_Bird
   m_EditorClassIdentifier: Assembly-CSharp::ItemData
-  itemID: RedBird
+  itemID: Brown_Bird
+  itemName: Brown Bird
   itemType: 0
-  itemSprite: {fileID: 7637746059382139010, guid: 11e1d38b0b8aa93409fd7803c877088b, type: 3}
-  isUnlockedDafault: 1
+  itemSprite: {fileID: -5514137135716574297, guid: 5f9f5637719e0b34c8cdbe15d7da857d, type: 3}
+  price: 10000
+  isUnlockedDefault: 0

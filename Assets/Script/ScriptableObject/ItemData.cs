@@ -25,5 +25,4 @@ public class ItemData : ScriptableObject
      public Sprite ItemSprite => itemSprite;
      public int Price => price;
      public bool IsUnlockedDefault => isUnlockedDefault;
-
 }

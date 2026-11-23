@@ -2354,6 +2354,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1655589239}
+  - component: {fileID: 1655589240}
   m_Layer: 5
   m_Name: InventoryUI
   m_TagString: Untagged
@@ -2384,6 +2385,22 @@ RectTransform:
   m_AnchoredPosition: {x: 33, y: -86}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1655589240
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1655589238}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbff709c07d89a04b856304ccc191c8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StoreUI
+  inventoryTabButton: {fileID: 1606351019}
+  shopTabButton: {fileID: 642465880}
+  contentContainer: {fileID: 938603817}
+  itemRowPrefab: {fileID: -2076582693175950330, guid: 716bbc9ec09e1b44f88997ec59b08cf8, type: 3}
 --- !u!1 &1746335390
 GameObject:
   m_ObjectHideFlags: 0
@@ -2674,6 +2691,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2038247888}
+  - component: {fileID: 2038247889}
   m_Layer: 0
   m_Name: InventoryManager
   m_TagString: Untagged
@@ -2696,6 +2714,26 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2038247889
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2038247887}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e6a4053789845646b403a7a70ac85c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InventoryManager
+  allItems:
+  - {fileID: 11400000, guid: 0481da76c829c694da3c835d680b2f55, type: 2}
+  - {fileID: 11400000, guid: 26fee059ca5b8b54fafff0530f26612f, type: 2}
+  - {fileID: 11400000, guid: 6563ee9ebee06a74e811b7086ee3a87a, type: 2}
+  - {fileID: 11400000, guid: 04448594b49c8fe459723f8435ecc5d4, type: 2}
+  - {fileID: 11400000, guid: 14aae387012dc1347a0c8e354b10e4e4, type: 2}
+  - {fileID: 11400000, guid: 7743fa092d0809b4a826adfead3aa564, type: 2}
+  - {fileID: 11400000, guid: 1537f7a6c0734624c9000d2e0f211262, type: 2}
 --- !u!1 &2138075861
 GameObject:
   m_ObjectHideFlags: 0

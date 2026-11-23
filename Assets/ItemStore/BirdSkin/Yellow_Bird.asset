@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fb6ed0879c4cd047a1a641984096f1e, type: 3}
+  m_Name: Yellow_Bird
+  m_EditorClassIdentifier: Assembly-CSharp::ItemData
+  itemID: Yellow_Bird
+  itemName: Yellow Bird
+  itemType: 0
+  itemSprite: {fileID: 2408579105621248661, guid: 3edbac61d38bbb0428dd734abe4d2cf0, type: 3}
+  price: 10
+  isUnlockedDefault: 1

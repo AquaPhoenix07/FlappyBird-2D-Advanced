@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fb6ed0879c4cd047a1a641984096f1e, type: 3}
+  m_Name: Grey_Bird
+  m_EditorClassIdentifier: Assembly-CSharp::ItemData
+  itemID: Grey_Bird
+  itemName: Grey Bird
+  itemType: 0
+  itemSprite: {fileID: 7040643229884955960, guid: a08034a4588c12846819397bec1691eb, type: 3}
+  price: 50000
+  isUnlockedDefault: 1
