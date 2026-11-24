@@ -17,8 +17,19 @@ public class StoreUI : MonoBehaviour
     [SerializeField] private Transform contentContainer; 
     [SerializeField] private ItemRowUI itemRowPrefab;    
     
-    private StoreTab currentTab = StoreTab.Inventory;
+    private StoreTab currentTab;
 
+    private void Awake()
+    {
+        //Event
+        MenuUI.inventoryButtonClick += onShowInventory;
+        MenuUI.outInventoryButtonClick += onHideInventory;
+    }
+
+    private void Start()
+    {
+        onHideInventory();
+    }
     private void OnEnable()
     {
         // Đăng ký sự kiện khi mở bảng
@@ -26,8 +37,9 @@ public class StoreUI : MonoBehaviour
 
         inventoryTabButton.onClick.AddListener(() => SwitchTab(StoreTab.Inventory));
         shopTabButton.onClick.AddListener(() => SwitchTab(StoreTab.Shop));
-
-        // Vẽ danh sách ngay khi vừa bật bảng
+        
+        // Vẽ danh sách ngay khi vừa bật bảng]
+        currentTab = StoreTab.Inventory;
         RefreshUI();
     }
     private void OnDisable()
@@ -88,6 +100,21 @@ public class StoreUI : MonoBehaviour
     {
         // Hiện tại test mở khóa luôn; sau này sẽ thêm bước kiểm tra trừ Coin ở đây
         InventoryManager.Instance.UnlockItem(item);
+    }
+    private void onShowInventory()
+    {
+        gameObject.SetActive(true);
+    }
+
+    private void onHideInventory()
+    {
+        gameObject.SetActive(false);
+    }
+
+    private void OnDestroy()
+    {
+        MenuUI.inventoryButtonClick -= onShowInventory;
+        MenuUI.outInventoryButtonClick -= onHideInventory;
     }
 }
 

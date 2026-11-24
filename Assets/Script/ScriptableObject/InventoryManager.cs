@@ -7,6 +7,7 @@ public class InventoryManager : MonoBehaviour
 {
     //Singleton
     public static InventoryManager Instance { get; private set; }
+    
     // Set Up Key const cho PlayerPrefs 
     private const string EQUIPPED_BIRD_KEY = "Equipped_BirdSkin";
     private const string EQUIPPED_BG_KEY = "Equipped_Background";
@@ -24,15 +25,15 @@ public class InventoryManager : MonoBehaviour
 
     private void Awake()
     {
+        //Singleton Pattern
         if (Instance != null && Instance != this)
         {
             Destroy(gameObject);
             return;
         }
-
         Instance = this;
         DontDestroyOnLoad(gameObject);
-
+        
         LoadEquippedItems();
     }
     // --- PHẦN LỌC DỮ LIỆU AN TOÀN (IEnumerable + yield return) ---
@@ -117,4 +118,6 @@ public class InventoryManager : MonoBehaviour
     }
     public ItemData GetCurrentBirdSkin() => currentBirdSkin;
     public ItemData GetCurrentBackground() => currentBackground;
+
+    
 }
