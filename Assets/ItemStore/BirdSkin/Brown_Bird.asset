@@ -16,5 +16,6 @@ MonoBehaviour:
   itemName: Brown Bird
   itemType: 0
   itemSprite: {fileID: -5514137135716574297, guid: 5f9f5637719e0b34c8cdbe15d7da857d, type: 3}
+  animatorController: {fileID: 22100000, guid: bf8c559c155494447a62b7638c56b3ef, type: 2}
   price: 10000
   isUnlockedDefault: 0

@@ -13,6 +13,7 @@ public class ItemData : ScriptableObject
     [SerializeField] private string itemName;
     [SerializeField] private ItemType itemType;
     [SerializeField] private Sprite itemSprite;
+    [SerializeField] private RuntimeAnimatorController animatorController;
 
      [Header("Shop Info")] 
      [SerializeField] private int price;
@@ -25,4 +26,5 @@ public class ItemData : ScriptableObject
      public Sprite ItemSprite => itemSprite;
      public int Price => price;
      public bool IsUnlockedDefault => isUnlockedDefault;
+     public RuntimeAnimatorController AnimatorController => animatorController;
 }

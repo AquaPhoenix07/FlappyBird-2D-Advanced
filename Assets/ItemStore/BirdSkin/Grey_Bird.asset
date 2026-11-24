@@ -16,5 +16,6 @@ MonoBehaviour:
   itemName: Grey Bird
   itemType: 0
   itemSprite: {fileID: 7040643229884955960, guid: a08034a4588c12846819397bec1691eb, type: 3}
+  animatorController: {fileID: 22100000, guid: 87b1f5a336820684584bd33d47dedf53, type: 2}
   price: 50000
   isUnlockedDefault: 1

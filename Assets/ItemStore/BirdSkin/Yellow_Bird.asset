@@ -16,5 +16,6 @@ MonoBehaviour:
   itemName: Yellow Bird
   itemType: 0
   itemSprite: {fileID: 2408579105621248661, guid: 3edbac61d38bbb0428dd734abe4d2cf0, type: 3}
+  animatorController: {fileID: 22100000, guid: 7eafb9e511be875459b535bb079ff336, type: 2}
   price: 10
   isUnlockedDefault: 1

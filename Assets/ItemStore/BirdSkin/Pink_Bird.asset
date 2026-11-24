@@ -16,5 +16,6 @@ MonoBehaviour:
   itemName: Pink Bird
   itemType: 0
   itemSprite: {fileID: -3110797177088322143, guid: 0dc55f3e1bc835c4caef445a69c13a0e, type: 3}
+  animatorController: {fileID: 22100000, guid: 252c5647bcaea204d9ba2af173e3cb76, type: 2}
   price: 10
   isUnlockedDefault: 1

@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fb6ed0879c4cd047a1a641984096f1e, type: 3}
   m_Name: Basic_Bird
   m_EditorClassIdentifier: Assembly-CSharp::ItemData
-  itemID: 
-  itemName: 
+  itemID: Basic_Bird
+  itemName: Basic Bird
   itemType: 0
-  itemSprite: {fileID: 0}
+  itemSprite: {fileID: -2273723988912934231, guid: df78b4bc4154c234095aaf7dfc76f5f6, type: 3}
+  animatorController: {fileID: 9100000, guid: 6a0c0d3e89d76c144b55fcfaa2402780, type: 2}
   price: 0
-  isUnlockedDefault: 0
+  isUnlockedDefault: 1
