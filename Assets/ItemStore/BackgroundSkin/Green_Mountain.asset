@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ItemData
   itemID: Green_Mountain
   itemName: Green Mountain
-  itemType: 0
+  itemType: 1
   itemSprite: {fileID: 3874855250206449648, guid: 8e71a52613758c744b171a590c56d68a, type: 3}
   animatorController: {fileID: 0}
   price: 1
