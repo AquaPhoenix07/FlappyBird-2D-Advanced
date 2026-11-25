@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fb6ed0879c4cd047a1a641984096f1e, type: 3}
+  m_Name: Phoenix
+  m_EditorClassIdentifier: Assembly-CSharp::ItemData
+  itemID: Phoenix
+  itemName: Phoenix
+  itemType: 0
+  itemSprite: {fileID: 3399972882977546302, guid: 56bbfc3b8a3920b4ab5c9b0790c31174, type: 3}
+  animatorController: {fileID: 22100000, guid: e6e4798fc5231d343ac442ea2f23c45f, type: 2}
+  price: 5
+  isUnlockedDefault: 0

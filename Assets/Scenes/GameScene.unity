@@ -4320,6 +4320,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2130664631}
   - component: {fileID: 2130664632}
+  - component: {fileID: 2130664633}
   m_Layer: 0
   m_Name: Skin
   m_TagString: Untagged
@@ -4336,8 +4337,8 @@ Transform:
   m_GameObject: {fileID: 2130664630}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.0282, y: 0.0393, z: 0}
-  m_LocalScale: {x: 2.3956165, y: 0.7873312, z: 1}
+  m_LocalPosition: {x: 0.8572, y: 0.82, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 568955693}
@@ -4391,16 +4392,28 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: -3028843797619237106, guid: df78b4bc4154c234095aaf7dfc76f5f6, type: 3}
+  m_Sprite: {fileID: -5001303908148437828, guid: df78b4bc4154c234095aaf7dfc76f5f6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 1, y: 102.4}
+  m_DrawMode: 1
+  m_Size: {x: 21.422665, y: 10.227188}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!114 &2130664633
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2130664630}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a157ea11d2da524ea41ef31420892c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BackgroundVisual
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

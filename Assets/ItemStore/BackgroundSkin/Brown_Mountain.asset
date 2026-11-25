@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fb6ed0879c4cd047a1a641984096f1e, type: 3}
+  m_Name: Brown_Mountain
+  m_EditorClassIdentifier: Assembly-CSharp::ItemData
+  itemID: Brown_Mountain
+  itemName: Brown Mountain
+  itemType: 0
+  itemSprite: {fileID: -453803498635639824, guid: 053d67a1ede1f654fb4f6bbe3ce000f1, type: 3}
+  animatorController: {fileID: 0}
+  price: 1
+  isUnlockedDefault: 1

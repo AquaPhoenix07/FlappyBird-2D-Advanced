@@ -17,5 +17,5 @@ MonoBehaviour:
   itemType: 0
   itemSprite: {fileID: 7637746059382139010, guid: 11e1d38b0b8aa93409fd7803c877088b, type: 3}
   animatorController: {fileID: 22100000, guid: 7b972d7f57143794fa78c0fd48218264, type: 2}
-  price: 100
-  isUnlockedDefault: 1
+  price: 1
+  isUnlockedDefault: 0

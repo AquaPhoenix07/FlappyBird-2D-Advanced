@@ -15,9 +15,6 @@ public class BirdVisual : MonoBehaviour
     {
         UpdateVisual();
     }
-
-    
-
     private void UpdateVisual()
     {
         if (InventoryManager.Instance == null) return;
