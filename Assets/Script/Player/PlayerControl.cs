@@ -6,7 +6,8 @@ public class PlayerControl : MonoBehaviour
     private Rigidbody2D playerRigidbody;
     [SerializeField] private const float JUMP_POWER = 3f;
     [SerializeField] private const float ROTATE_SPEED = 10f;
-    public static event Action OnBirdDied; 
+    public static event Action OnBirdDied;
+    public static event Action OnBirdJump;
 
     private void Awake()
     {
@@ -24,6 +25,7 @@ public class PlayerControl : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             playerRigidbody.linearVelocity = Vector2.up * JUMP_POWER;
+            OnBirdJump?.Invoke();
         }
     }
 

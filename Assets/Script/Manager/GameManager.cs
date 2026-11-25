@@ -48,6 +48,7 @@ public class GameManager : MonoBehaviour
         Coin.OnGetCoin += AddCoin;
         GameOver_UI.OnClickRestartButton += RestartLevel;
         GameOver_UI.OnClickMenuButton += BackToMenu;
+        SceneController.OnLoadGameScene += ResetScore;
         
         //EVENT BROADCAST
         OnChangeHighScore?.Invoke(highestScore);
@@ -94,5 +95,12 @@ public class GameManager : MonoBehaviour
         Coin.OnGetCoin -= AddCoin;
         GameOver_UI.OnClickRestartButton -= RestartLevel;
         GameOver_UI.OnClickMenuButton -= BackToMenu;
+        SceneController.OnLoadGameScene -= ResetScore;
+    }
+
+    private void ResetScore()
+    {
+        score = 0;
+        coin = 0;
     }
 }
