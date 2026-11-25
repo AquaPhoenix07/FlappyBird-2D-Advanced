@@ -48,4 +48,9 @@ public class CoinManager : MonoBehaviour
     }
 
     public int TotalCoin => totalCoin;
+
+    private void OnDestroy()
+    {
+        Coin.OnGetCoin -= ChangeTotalCoin;
+    }
 }

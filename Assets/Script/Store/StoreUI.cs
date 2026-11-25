@@ -98,8 +98,14 @@ public class StoreUI : MonoBehaviour
 
     private void HandleBuyClicked(ItemData item)
     {
-        // Hiện tại test mở khóa luôn; sau này sẽ thêm bước kiểm tra trừ Coin ở đây
-        InventoryManager.Instance.UnlockItem(item);
+        if(CoinManager.Instance.TrySpendCoin(item.Price))
+        {
+            InventoryManager.Instance.UnlockItem(item);
+        }
+        else
+        {
+            Debug.Log("Not Enough Money");
+        }
     }
     private void onShowInventory()
     {
