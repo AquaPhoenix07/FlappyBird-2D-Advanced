@@ -52,13 +52,7 @@ public class GameManager : MonoBehaviour
         //EVENT BROADCAST
         OnChangeHighScore?.Invoke(highestScore);
     }
-
-    // Update is called once per frame
-    void FixedUpdate()
-    {
-        
-    }
-
+    
     private void AddScore()
     {
         score++;
@@ -85,6 +79,7 @@ public class GameManager : MonoBehaviour
     private void RestartLevel()
     {
         Debug.Log("Restart");
+        score = 0;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
